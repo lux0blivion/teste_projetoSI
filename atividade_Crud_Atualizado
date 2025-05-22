@@ -6,6 +6,7 @@ import re
 conn = sqlite3.connect("alem_do_mapa.db")
 cursor = conn.cursor()
 
+
 # tabelas com as estruturas atualizadas
 cursor.execute("DROP TABLE IF EXISTS usuarios")
 cursor.execute("DROP TABLE IF EXISTS estabelecimentos")
@@ -35,7 +36,7 @@ CREATE TABLE IF NOT EXISTS estabelecimentos (
 """)
 conn.commit()
 
-#  Funções de Validação 
+#  Funções de Validação de email, senha e telefone
 def email_valido(email):
     email = email.strip()
     if ' ' in email:
